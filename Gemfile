@@ -30,6 +30,8 @@ gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'hirb'
 
+gem "will_paginate", "~> 4.0"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
