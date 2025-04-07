@@ -12,12 +12,12 @@
                 </div>
             </div>
             <div class="extra content">
-                <form class="ui reply form">
+                <%= form_for(@message, url: message_path, html: { class: "ui reply form", role: "form" }) do |f| %>
                     <div class="ui fluid icon input">
-                        <input type="text" placeholder="Say Something!">
-                        <i class="bordered inverted olive icon edit"></i>
+                        <%= f.text_field :body, placeholder: "Enter your message here...", autocomplete: :off %>
+                        <%= f.button '<i class="bordered inverted olive icon edit"></i>'.html_safe %>
                     </div>
-                </form>
+                <% end %>
             </div>
         </div>
     </div>

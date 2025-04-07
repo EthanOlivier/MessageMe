@@ -8,7 +8,7 @@
         <div class="ui placeholder segment">
             <div class="ui very relaxed stackable grid left aligned column">
                 <div class="column">
-                    <%= form_for(:session, url: login_path, html: { class: "ui form" }, local: true, data: { turbo: false }) do |f| %>
+                    <%= form_for(:session, url: login_path, html: { class: "ui form", role: "form" }, local: true, data: { turbo: false }) do |f| %>
                         <div class="field">
                             <%= f.label :username, "Username:" %>
                             <div class="ui left icon input">
