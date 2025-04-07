@@ -6,24 +6,25 @@
 <div class="ui middle aligned center aligned grid">
     <div class="six wide column">
         <div class="ui placeholder segment">
-            <div class="ui very relaxed stackable grid">
+            <div class="ui very relaxed stackable grid left aligned column">
                 <div class="column">
-                    <div class="ui form">
+                    <%= form_for(:session, url: login_path, html: { class: "ui form" }, local: true, data: { turbo: false }) do |f| %>
                         <div class="field">
-                            <label>Username</label>
+                            <%= f.label :username, "Username:" %>
                             <div class="ui left icon input">
-                                <input type="text" placeholder="Username">
+                                <%= f.text_field :username, placeholder: "Username", autocomplete: :off %>
                                 <i class="user icon"></i>
                             </div>
                         </div>
                         <div class="field">
-                            <label>Password</label>
+                            <%= f.label :password, "Password:" %>
                             <div class="ui left icon input">
-                                <input type="password">
+                                <%= f.text_field :password, placeholder: "Password", autocomplete: :off %>
                                 <i class="lock icon"></i>
                             </div>
                         </div>
-                    <div class="ui blue submit button">Login</div>
+                        <%= f.submit "Log in", class: "ui blue submit button" %>
+                    <% end %>
                 </div>
             </div>
         </div>
