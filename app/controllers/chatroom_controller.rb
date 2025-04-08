@@ -3,6 +3,6 @@ class ChatroomController < ApplicationController
   
   def index
     @message = Message.new
-    @messages = Message.paginate(page: params[:id], per_page: 25)
+    @messages = Message.all
   end
 end 

@@ -25,7 +25,9 @@ class SessionsController < ApplicationController
   private
 
   def logged_in_redirect
-    flash[:error] = "You are already logged in"
-    redirect_to root_path
+    if logged_in?
+      flash[:error] = "You are already logged in"
+      redirect_to root_path
+    end
   end
 end
