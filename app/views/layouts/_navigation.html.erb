@@ -1,23 +1,18 @@
 <div class="ui olive inverted large menu">
-    <%= link_to "Chatroom", root_path, class: "active item" %>
-    <a class="item">Messages</a>
+    <% if logged_in? %>
+        <%= link_to "Chatroom", root_path, class: "active item" %>
+    <% else %>
+        <%= link_to "Log in", login_path, class: "active item" %>
+    <% end %>
     <div class="right menu">
-        <div class="ui dropdown item">
-            Account <i class="dropdown icon"></i>
-            <div class="menu">
-                <% if logged_in? %>
-                    <%= link_to "Log out", logout_path, class: "item", method: :delete %>
-                <% else %>
-                    <%= link_to "Log in", login_path, class: "item" %>
-                <% end %>
+        <% if logged_in? %>
+            <div class="item">
+                <%= link_to "Log out", logout_path, class: "ui primary button", method: :delete %>
             </div>
-        </div>
-        <%
-=begin%>
- <div class="item">
-            <div class="ui primary button">Sign Up</div>
-        </div> 
-<%
-=end%>
+        <% else %>
+            <div class="item">
+                <div class="ui primary button">Sign Up</div>
+            </div>
+        <% end %>
     </div>
 </div>
