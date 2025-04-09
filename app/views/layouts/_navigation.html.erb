@@ -1,8 +1,6 @@
 <div class="ui olive inverted large menu">
     <% if logged_in? %>
         <%= link_to "Chatroom", root_path, class: "active item" %>
-    <% else %>
-        <%= link_to "Log in", login_path, class: "active item" %>
     <% end %>
     <div class="right menu">
         <% if logged_in? %>
@@ -11,7 +9,10 @@
             </div>
         <% else %>
             <div class="item">
-                <div class="ui primary button">Sign Up</div>
+                <%= link_to "Log in", login_path, class: "ui primary button" %>
+            </div>
+            <div class="item">
+                <%= link_to "Sign up", signup_path, class: "ui primary button" %>
             </div>
         <% end %>
     </div>
