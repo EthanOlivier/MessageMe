@@ -24,54 +24,25 @@
 
     <div class="four wide column">
         <div class="ui fluid raised card chatbox">
-            <div class="content">
+            <div class="content" id="active-users-container">
                 <table class="ui very basic collapsing celled table">
                     <thead>
                         <tr>
-                            <th>Employee</th>
+                            <th>Active Users:</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <h4 class="ui image header">
-                                    <div class="content">
-                                        Lena
-                                        <div class="sub header">Human Resources</div>
-                                    </div>
-                                </h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4 class="ui image header">
-                                    <div class="content">
-                                        Matthew
-                                        <div class="sub header">Fabric Design</div>
-                                    </div>
-                                </h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4 class="ui image header">
-                                    <div class="content">
-                                        Lindsay
-                                        <div class="sub header">Entertainment</div>
-                                    </div>
-                                </h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h4 class="ui image header">
-                                    <div class="content">
-                                        Mark
-                                        <div class="sub header">Executive</div>
-                                    </div>
-                                </h4>
-                            </td>
-                        </tr>
+                        <% @users.each do |username| %>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <div class="content">
+                                            <%= username %>
+                                        </div>
+                                    </h4>
+                                </td>
+                            </tr>
+                        <% end %>
                     </tbody>
                 </table>
             </div>

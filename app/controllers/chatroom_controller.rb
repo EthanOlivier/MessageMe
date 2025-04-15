@@ -4,5 +4,6 @@ class ChatroomController < ApplicationController
   def index
     @message = Message.new
     @messages = Message.custom_display
+    @users = ActiveUsers.all
   end
 end 
